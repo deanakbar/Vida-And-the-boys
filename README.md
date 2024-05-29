@@ -113,83 +113,91 @@ sns.pairplot(dfcorr, diag_kind='kde', hue='Late_shipment(cat)')
 * D. Nilai median lebih kecil dibanding dengan nilai mean sehingga memiliki distribusi positif.
 
 ## Univariate Analysis
-**Pada Box Plot**
-A. Customer care call pada boxplot menandakan bahwa pelanggan lebih banyak menelpon ke customer call 3 sampai 5 kali dan kolom customer care call ini tidak memiliki outlier
+** Box Plot**
 
-B. Persebaran data dari kolom Cost of the product pada boxplot berada di harga 180 hingga 250 dan cost of the product ini tidak memiliki outlier
 
-C .Prior purchase pada boxplot pelanggan melakukan repeat order, kebanyakan 3 sampai 4 kali order dan di kolom prior purchase ini terdapat outlier yang cukup extreme di 10 kali order
+A. Customer care call: The box plot indicates that customers typically make 3 to 5 calls to customer care. There are no outliers in this column.
 
-D. Discount offered pada boxplot pelanggan lebih banyak mengambil discount 1% sampai dengan 10% dan di kolom discount offered ini memiliki outlier yang sangat banyak.
+B. Cost of the product: The distribution of data for the cost of the product on the box plot is between 180 and 250. There are no outliers in this column.
 
-E. Weight in gms pada boxplot berat paket kebanyakan berada di 1900 sampai 5000 dan kolom tersebut tidak memiliki outlier
+C. Prior purchase: The box plot shows that customers tend to make repeat orders, typically 3 to 4 times. There is one extreme outlier in this column at 10 orders.
 
-F. Customer rating pada boxplot perusahaan menilai pelanggan kebanyakan di rating 2 sampai 4 dan pada kolom ini tidak memiliki outlier
+D. Discount offered: The box plot shows that customers typically take discounts of 1% to 10%. There are many outliers in this column.
 
-G. Late shipment pada boxplot nya terlihat penuh dikarenakan lateshipment ini hanya ada 2 pilihan yaitu 0 dan 1 sehingga late shipment ini bisa dimasukan kedalam categorical
+E. Weight in gms: The box plot shows that the weight of packages is typically between 1900 and 5000 grams. There are no outliers in this column.
+
+F. Customer rating: The box plot shows that the company typically rates customers between 2 and 4 stars. There are no outliers in this column.
+
+G. Late shipment: The box plot shows that the data is bimodal, with two distinct values: 0 and 1. This suggests that late shipment can be considered a categorical variable.
 
 **Kdeplot**
-A. Customer care call pada kdeplot kolom tersebut memiliki bentuk multimodal yang dimana kolom tersebut bisa dimasukan kedalam categorikal
-B.Cost of the product pada kdeplot kolom tersebut memiliki bentuk hampir normal
+Kernel Density Plot (Kdeplot)
 
-C.Prior purchase pada kdeplot kolom tersebut memiliki bentuk multimodal yang dimana kolom tersebut bisa dimasukan kedalam categorikal
+A. Customer care call: The kdeplot shows that the distribution of customer care calls is multimodal. This suggests that customer care calls can be considered a categorical variable.
 
-D. Discount offered pada kdeplot kolom tersebut memiliki bentuk positif skewed dimana nilai mean lebih kecil dari pada median hingga memiliki longtial yang panjang
+B. Cost of the product: The kdeplot shows that the distribution of the cost of the product is approximately normal.
 
-E. Weight in gms pada kdeplot kolom tersebut memiliki bentuk negative skewed yang tidak sempurna dikarenakan tingginya lonjakan di angka 1900 membuat bentuk kolom tersebut seperti bimodal
+C. Prior purchase: The kdeplot shows that the distribution of prior purchases is multimodal. This suggests that prior purchases can be considered a categorical variable.
 
-F. Customer rating pada kdeplot kolom tersebut memiliki bentuk multimodal yang dimana kolom tersebut bisa dimasukan kedalam categorikal
+D. Discount offered: The kdeplot shows that the distribution of discounts offered is positively skewed, with a mean that is smaller than the median and a long tail.
 
-G. Late shipment pada kdeplot kolom tersebut memiliki bentuk bimodal yang dimana kolom tersebut bisa dimasukan kedalam categorikal
+E. Weight in gms: The kdeplot shows that the distribution of weight in grams is negatively skewed, but not perfectly so. The high spike at 1900 grams makes the distribution appear bimodal.
+
+F. Customer rating: The kdeplot shows that the distribution of customer ratings is multimodal. This suggests that customer ratings can be considered a categorical variable.
+
+G. Late shipment: The kdeplot shows that the distribution of late shipments is bimodal. This suggests that late shipment can be considered a categorical variable.
 
 **Count Plot**
-A. Warehouse block pada countplot dapat dilihat bahwa warehouse F merupakan gudang dengan jumlah penyimpanan barang terbanyak dibanding warehouse di block lain seperti A, B, C dan D
+Count Plot
 
-B. Mode_of_shipment pada countplot dapat dilihat bahwa Mode pengiriman menggunakan kapal menjadi mode pengiriman terbanyak, sementara mode menggunakan jalur darat dan udara memiliki nilai yang hampir sama
+A. Warehouse block: The count plot shows that Warehouse F has the largest number of items stored compared to the other warehouses (A, B, C, and D).
 
-C. Product_importance pada countplot dapat dilihat Pelanggan kebanyakan membeli tipe barang low priority, dan ada ketimpangan pada high priority
+B. Mode_of_shipment: The count plot shows that the most common mode of shipment is by sea, while land and air shipments are relatively equal.
 
-D. Gender pada countplot dapat dilihat pelanggan paling banyak merupakan wanita namun perbandingannya tidak terlalu jauh dengan pria
+C. Product_importance: The count plot shows that customers most often purchase low-priority items, with a disproportionate number of high-priority items.
 
-E. Reached_on_Time_Y.N pada countplot dapat dilihat bahwa barang saat ini sering kali telat dibanding tepat waktu
+D. Gender: The count plot shows that the majority of customers are women, but the proportion of men is not significantly lower.
 
-F. Customer Rating pada countplot dapat dilihat bahwa rating dari 1 hingga 5 perbandingannya tidak jauh berbeda hanya rating 3 lebih dominan dibandingkan rating yang lain
+E. Reached_on_Time_Y.N: The count plot shows that items are often late rather than on time.
 
+F. Customer Rating: The count plot shows that the proportions of ratings from 1 to 5 are not significantly different, with rating 3 being the most common.
 ## Multivariate Analysis
-A. **Hasil berdasarkan metode heatmap dan kendall tau:**
+A. Results based on heatmap and Kendall tau methods:
 
-* Daftar fitur yang berkorelasi positif dengan Late_shipment(num)= Customer_rating(num) dan Discount_offered.
-* Daftar fitur yang berkorelasi negatif dengan Late_shipment(num)= Customer_care_calls, Cost_of_the_product,   Prior_purchases, dan Weight_in_gms
-* Dua fitur terkuat untuk dipasangkan dengan Late_shipment(num), yaitu Discount_offered dan Weight_in_gms.
-* Berdasarkan metode heatmap dan kendall tau, Late_shipment(num) dengan Discount_offered memiliki korelasi positif. Semakin tinggi diskon yang ditawarkan pada suatu produk, maka semakin tinggi potensi pengirimannya mengalami keterlambatan.
-* Berdasarkan metode heatmap,Late_shipment(num) dengan Weight_in_gms memiliki korelasi negatif. Semakin ringan suatu produk, maka semakin tinggi potensi pengirimannya mengalami keterlambatan.
-* Berdasarkan metode heatmap, tidak ditemukan fitur yang berkorelasi kuat dengan nilai di atas 0.7. Meskipun demikian, dua fitur yang berkorelasi mendekati kuat untuk dipasangkan dengan Late_shipment(num), yaitu Discount_offered dan Weight_in_gms.
-Berdasarkan metode kendall tau, fitur dengan korelasi terkuat untuk dipasangkan dengan Late_shipment(num) adalah Discount_offered. Meskipun demikian, nilai tersebut masih jauh mendekati satu.
+Features that correlate positively with Late_shipment(num): Customer_rating(num) and Discount_offered.
+Features that correlate negatively with Late_shipment(num): Customer_care_calls, Cost_of_the_product, Prior_purchases, and Weight_in_gms.
+The two strongest features to pair with Late_shipment(num): Discount_offered and Weight_in_gms.
+Based on the heatmap and Kendall tau methods, Late_shipment(num) and Discount_offered have a positive correlation. The higher the discount offered on a product, the higher the potential for its shipment to be delayed.
+Based on the heatmap, Late_shipment(num) and Weight_in_gms have a negative correlation. The lighter a product is, the higher the potential for its shipment to be delayed.
+Based on the heatmap, no features were found to correlate strongly with a value above 0.7. However, the two features that correlate closely to Late_shipment(num) are Discount_offered and Weight_in_gms.
+Based on the Kendall tau method, the feature with the strongest correlation to pair with Late_shipment(num) is Discount_offered. However, this value is still far from approaching one.
+Additional Opinion:
 
-Pendapat Tambahan:
-**Penggunaan heatmap kurang cocok dipakai dalam kasus ini karena sifat Late_shipsment(num) yang sebenarnya adalah tipe data kategori.**
-
-B. **Kesimpulan**
-* Scatter plot dimana kedua warna dapat terpisah dengan baik dan memiliki pola yang jelas sehingga menarik untuk diperhatikan terletak pada kombinasi variabel Late_shipment(num) dengan Discount_offered dan Weight_in_gms.
-* Discount_Offered lebih dari 10% mengalami keterlambatan. Hipotesis: Diskon produk di atas 10% mengakibatkan tingginya pembelian dan pengiriman suatu produk, sedangkan kuota pengiriman barang tidak berubah sehingga pengiriman mengalami keterlambatan. Kasus semacam ini disebut dengan overload. Hal ini sering dialami oleh berbagai ekspedisi di dunia.
-* Weight_in_gms direntang masa 2000 - 4000 gram mengalami keterlambatan.
-
-
+The use of heatmaps is not well-suited for this case due to the categorical nature of Late_shipsment(num).
+B. Conclusion
+Scatter plots where the two colors can be separated well and have a clear pattern are worth considering for the combination of variables Late_shipment(num) and Discount_offered and Weight_in_gms.
+Discount_Offered over 10% experiences delays. Hypothesis: Discounts on products over 10% result in high purchases and shipments of a product, while the quota for shipping goods remains unchanged, so shipments are delayed. This type of case is called overload. This is often experienced by various expeditions in the world.
+Weight_in_gms in the range of 2000 - 4000 grams experiences delays.
 
 
 
 ## Business Insight
-Dari analisis yang telah kami lakukan, berikut beberapa business insight yang telah di tentukan :
-* Melihat metode pengiriman apa yang sering terlambat
-Pengiriman menggunakan kapal cenderung mengalami keterlambatan dalam pengiriman. Hal itu wajar dikarenakan pengiriman paling banyak dengan moda kapal. Dengan itu, perusahaan bisa lebih mengurangi pengiriman moda kapal dengan menggunakan moda pengiriman lainnya. Sehingga, meminimalisir penumpukan dan keterlambatan dalam pengiriman barang.
-Pengiriman barang berdasarkan prioritas dan status pengiriman
-* Berdasarkan dari product important, dapat dilihat pengiriman dengan tipe low priority lebih banyak mengalami keterlambatan dalam pengiriman. Dikarenakan, customer lebih banyak melakukan pembelian dengan tipe barang low priority. Untuk itu, perusahaan dapat mengatur pengiriman berdasarkan prioritas dan status pengiriman yang mengalami penumpukan.
-* Hubungan berat dengan keterlambatan dan merekomendasikan pengiriman berdasarkan berat barang
-Pengiriman barang dengan berat < 4000 gram cenderung mengalami keterlambatan, dengan itu perlu digali lebih lanjut data pengiriman barang dengan berat < 4000 gram dan 2000-4000 gram. Sehingga, kita bisa merekomendasikan pengiriman berdasarkan berat barang.
-* Membuat diskon jadi lebih menarik, gunakan diskon 5%, 10%, dan 15%
-* Memberikan diskon kepada customer dengan prior purchase lebih dari 3, dengan  menggunakan diskon 5% 10% dan 15% agar lebih menarik dan customer kemungkinan untuk repeat order lagi akan tinggi.
 
 
+From the analysis we have carried out, here are some business insights that have been determined:
+
+*See which shipping methods are often delayed:
+*Shipments by sea tend to experience delays in delivery. This is understandable because most shipments are made by sea. With that, the company can reduce shipments by sea by using other shipping methods. This will minimize congestion and delays in shipping goods.
+*Shipping goods based on priority and shipping status:
+*Based on product importance, it can be seen that shipments with a low priority type are more likely to experience delays in delivery. This is because customers are more likely to buy low-priority goods. Therefore, the company can arrange shipments based on the priority and status of shipments that are experiencing congestion.
+*The relationship between weight and delays and recommending shipping based on the weight of the goods:
+*Shipments of goods with a weight of < 4000 grams tend to experience delays. Therefore, it is necessary to further analyze the data on shipments of goods with a weight of < 4000 grams and 2000-4000 grams. So, we can recommend shipping based on the weight of the goods.
+*Make discounts more attractive, use 5%, 10%, and 15% discounts:
+*Giving discounts to customers with prior purchases of more than 3, using 5%, 10% and 15% discounts to make it more attractive and increase the likelihood of customers repeating their orders.
+
+Additional Notes
+The author uses the term "heatmap" to refer to a correlation matrix visualization.
+The author uses the term "Kendall tau" to refer to a correlation coefficient for ordinal data.
 
 
 
